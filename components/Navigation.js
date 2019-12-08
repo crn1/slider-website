@@ -14,9 +14,16 @@ import grey from '@material-ui/core/colors/grey'
 
 const Container = styled(Grid)(({theme}) => ({
 	position: 'fixed',
-	paddingTop: theme.spacing(2),
-	paddingLeft: theme.spacing(4),
-	paddingRight: theme.spacing(4),
+	[theme.breakpoints.up('sm')]: {
+		paddingTop: theme.spacing(2),
+		paddingLeft: theme.spacing(4),
+		paddingRight: theme.spacing(4),
+	},
+	[theme.breakpoints.down('sm')]: {
+		paddingTop: theme.spacing(1),
+		paddingLeft: theme.spacing(2),
+		paddingRight: theme.spacing(2),
+	},
 	paddingDown: 0,
 	zIndex: 1,
 }))

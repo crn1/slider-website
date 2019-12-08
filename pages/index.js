@@ -1,12 +1,14 @@
 import Navigation from '../components/Navigation'
 import BaseLayout from '../components/BaseLayout'
 import BackgroundContainer from '../components/BackgroundContainer'
-import VideoSlide from '../components/VideoSlide'
+import HomeSlide from '../components/HomeSlide'
+import AboutSlide from '../components/AboutSlide'
 
 const Index = () => (
 	<BaseLayout>
 		<Navigation />
-		<VideoSlide />
+		<HomeSlide />
+		<AboutSlide />
 		<BackgroundContainer name='home'>
 		</BackgroundContainer>
 		<BackgroundContainer name='about'>

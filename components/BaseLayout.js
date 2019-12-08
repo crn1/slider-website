@@ -9,13 +9,15 @@ import createTypography from '@material-ui/core/styles/createTypography'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import grey from '@material-ui/core/colors/grey'
+import pink from '@material-ui/core/colors/pink'
 
 const theme = createMuiTheme({
   typography: createTypography(createPalette({}), {
     fontFamily: '"Roboto"'
   }),
 	palette: {
-		primary: { main: grey[50], contastText: grey[900]}
+		primary: { main: grey[50], contastText: grey[900]},
+		secondary: { main: pink[500], contastText: pink[50]},
 	}
 })
 
