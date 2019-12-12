@@ -12,9 +12,10 @@ import Slide from './Slide'
 import MainHeader from './MainHeader'
 
 import grey from '@material-ui/core/colors/grey'
+import purple from '@material-ui/core/colors/purple'
 
 const Overlay = styled(Slide)(({theme}) => ({
-	width: '210%',
+	/*width: '210%',
 	right: '-105%',
 	[theme.breakpoints.up('sm')]:
 	{
@@ -28,7 +29,7 @@ const Overlay = styled(Slide)(({theme}) => ({
 		borderBottom: 0,
 		borderLeft: 0,
 	},
-	zIndex: -1,
+	zIndex: -1,*/
 }))
 
 const PaddingTypography = styled(Typography)(({theme}) => ({
@@ -43,16 +44,12 @@ const AboutSlide = props => {
 	const theme = useTheme()
 
 	const { scrollYProgress } = useContext(ScrollContext)
-	const overlayScaleX = useTransform(scrollYProgress, [0, 0.25], [0, 1])
+	const overlayScaleX = useTransform(scrollYProgress, [0, 0.2], [0, 1])
 	const overlayOpacity = useTransform(scrollYProgress, [0, 0.07], [0, 1])
 
-	const mainHeadingOpacity = useTransform(scrollYProgress, [0.15, 0.25, 0.35, 0.45], [0, 1, 1, 0])
-	const mainHeadingY = useTransform(scrollYProgress, [0.15, 0.25], [150, 0])
-	const mainHeadingScale = useTransform(scrollYProgress, [0.4999, 0.5], [1, 0])
-
-	const statueX = useTransform(scrollYProgress, [0.15, 0.25], [-489, theme.spacing(4)])
-	//const statueInvert = useTransform(scrollYProgress, [0.4, 0.5], ['invert(0)', 'invert(1)'])
-	const statueOpacity = useTransform(scrollYProgress, [0.15, 0.25], [0, 1])
+	const mainHeadingOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.7, 0.75], [0, 1, 1, 0])
+	const mainHeadingY = useTransform(scrollYProgress, [0.4, 0.5], [150, 0])
+	const mainHeadingScale = useTransform(scrollYProgress, [0.3999, 0.4, 0.7499, 0.75], [0, 1, 1, 0])
 
 	const MainHeading = () => (
 		<motion.div
@@ -62,8 +59,8 @@ const AboutSlide = props => {
 				scale: mainHeadingScale,
 			}}
 		>
-			<MainHeader align='center' variant='h1' component='h1'>
-				About us	
+			<MainHeader backgroundColor={purple[500]} align='center' variant='h1' component='h1'>
+				Services
 			</MainHeader>
 			<Grid container justify='center'>
 				<Grid item xs={12} md={8} lg={5} xl={4}>
@@ -75,23 +72,6 @@ const AboutSlide = props => {
 		</motion.div>
 	)
 
-	const Statue = () => (
-		<Hidden mdDown>
-			<motion.img
-				style={{
-					x: statueX,
-					opacity: statueOpacity,
-					height: '92vh',
-					bottom: 0,
-					position: 'fixed',
-					//filter: statueInvert,
-					//WebkitFilter: statueInvert,
-				}}
-				src='static/statue.png'
-			/>
-		</Hidden>
-	)
-
 	return (
 		<Slide>
 			<Overlay
@@ -101,7 +81,6 @@ const AboutSlide = props => {
 				}}
 			/>
 			<MainHeading />
-			<Statue />
 		</Slide>
 	)
 }

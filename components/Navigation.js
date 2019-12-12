@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
+import Button from '@material-ui/core/Button'
 
 import MenuIconRaw from '@material-ui/icons/Menu'
 
@@ -28,11 +29,13 @@ const Container = styled(Grid)(({theme}) => ({
 	zIndex: 1,
 }))
 
-const NavigationText = styled(Typography)({
+const NavigationButton = styled(Button)(({theme}) => ({
 	fontWeight: 'bold',
 	fontSize: 16,
 	cursor: 'pointer',
-})
+	paddingLeft: theme.spacing(6),
+	paddingRight: theme.spacing(6),
+}))
 
 const MenuIcon = styled(MenuIconRaw)({
 	color: grey[50],
@@ -57,30 +60,30 @@ const NavigationList = () => (
 	<Hidden smDown>
 		<Grid item>
 			<Link to='home' smooth>
-				<NavigationText variant='button' color='primary'>
+				<NavigationButton color='primary'>
 					Home
-				</NavigationText>
+				</NavigationButton>
 			</Link>
 		</Grid>
 		<Grid item>
 			<Link to='about' smooth>
-				<NavigationText variant='button' color='primary'>
+				<NavigationButton color='primary'>
 					About
-				</NavigationText>
+				</NavigationButton>
 			</Link>
 		</Grid>
 		<Grid item>
 			<Link to='services' smooth>
-				<NavigationText variant='button' color='primary'>
+				<NavigationButton color='primary'>
 					Services
-				</NavigationText>
+				</NavigationButton>
 			</Link>
 		</Grid>
 		<Grid item>
 			<Link to='contact' smooth>
-				<NavigationText variant='button' color='primary'>
+				<NavigationButton color='primary'>
 					Contact
-				</NavigationText>
+				</NavigationButton>
 			</Link>
 		</Grid>
 	</Hidden>
@@ -109,7 +112,7 @@ const Navigation = () => {
 	)
 
 	return (
-		<Container container alignItems='center' spacing={8}>
+		<Container container alignItems='center' spacing={1}>
 			<Logo />
 			<NavigationList />
 			<MenuButton />
