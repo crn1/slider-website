@@ -16,11 +16,6 @@ const VideoSlide = props => {
 
 	return (
 		<Slide>
-			<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 1, delay: 0.5 }}
-			>
 				<video src='static/movie.mp4' autoPlay loop muted
 					style={{
 						marginLeft: '50vw',
@@ -29,7 +24,6 @@ const VideoSlide = props => {
 						minWidth: '100%',
 					}}
 				/>
-			</motion.div>
 		</Slide>
 	)
 }

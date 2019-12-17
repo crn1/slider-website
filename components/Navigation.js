@@ -73,7 +73,7 @@ const NavigationList = () => (
 			</Link>
 		</Grid>
 		<Grid item>
-			<Link to='services' smooth>
+			<Link to='services' smooth duration={1500}>
 				<NavigationButton color='primary'>
 					Services
 				</NavigationButton>

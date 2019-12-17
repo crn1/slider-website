@@ -6,10 +6,16 @@ import Hidden from '@material-ui/core/Hidden'
 
 import grey from '@material-ui/core/colors/grey'
 
+const PaddingTypography = styled(Typography)(({theme}) => ({
+	[theme.breakpoints.down('sm')]:
+	{
+		padding: theme.spacing(2),
+	},
+}))
+
 const MainHeader = props => {
 
 	const HeaderStyle = styled(Typography)(({theme}) => ({
-		background: 'transparent',
 		[theme.breakpoints.up('sm')]:
 		{
 			marginTop: '20vh', 
@@ -21,15 +27,24 @@ const MainHeader = props => {
 			padding: theme.spacing(1),
 		},
 		color: grey[50],
-		backgroundColor: `${props.backgroundColor ?
-			props.backgroundColor :
+		backgroundColor: `${props.bgColor ?
+			props.bgColor :
 			theme.palette.secondary.main}D9`,
 	}))
 
 	return (
-		<HeaderStyle {...props}>
-			{ props.children }
-		</HeaderStyle>
+		<>
+			<HeaderStyle align='center' variant='h1' component='h1'>
+				{ props.title }
+			</HeaderStyle>
+			<Grid container justify='center'>
+				<Grid item xs={12} md={8} lg={5} xl={4}>
+					<PaddingTypography align='center' variant='h6' color='primary'>
+						{ props.children }
+					</PaddingTypography>
+				</Grid>
+			</Grid>
+		</>
 	)
 }
 

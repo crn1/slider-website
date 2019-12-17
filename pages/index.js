@@ -4,14 +4,20 @@ import BackgroundContainer from '../components/BackgroundContainer'
 import HomeSlide from '../components/HomeSlide'
 import AboutSlide from '../components/AboutSlide'
 import ServicesSlide from '../components/ServicesSlide'
+import ContactSlide from '../components/ContactSlide'
 import NextSlideButton from '../components/NextSlideButton'
+import Statue from '../components/Statue'
+import Overlay from '../components/Overlay'
 
 const Index = () => (
 	<BaseLayout>
 		<Navigation />
 		<HomeSlide />
+		<Overlay />
 		<AboutSlide />
 		<ServicesSlide />
+		<ContactSlide />
+		<Statue />
 		<NextSlideButton />
 		<BackgroundContainer name='home'>
 		</BackgroundContainer>
