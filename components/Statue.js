@@ -12,7 +12,7 @@ const Statue = () => {
 	const { scrollYProgress } = useContext(ScrollContext)
 
 	const statueX = useTransform(scrollYProgress, [0.13, 0.25], [-489, theme.spacing(4)])
-	const statueInvertRaw = useTransform(scrollYProgress, [0.42, 0.5], [0, 1])
+	const statueInvertRaw = useTransform(scrollYProgress, [0.68, 0.75], [0, 1])
 	const [statueInvert, setStatueInvert] = useState(statueInvertRaw.get()) 
 	const statueOpacity = useTransform(scrollYProgress, [0.13, 0.25], [0, 1])
 

@@ -8,11 +8,13 @@ import ContactSlide from '../components/ContactSlide'
 import NextSlideButton from '../components/NextSlideButton'
 import Statue from '../components/Statue'
 import Overlay from '../components/Overlay'
+import MainLogo from '../components/MainLogo'
 
 const Index = () => (
 	<BaseLayout>
 		<Navigation />
 		<HomeSlide />
+		<MainLogo />
 		<Overlay />
 		<AboutSlide />
 		<ServicesSlide />

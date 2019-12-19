@@ -16,14 +16,14 @@ const VideoSlide = props => {
 
 	return (
 		<Slide>
-				<video src='static/movie.mp4' autoPlay loop muted
-					style={{
-						marginLeft: '50vw',
-						transform: 'translate(-50%)',
-						minHeight: '100%',
-						minWidth: '100%',
-					}}
-				/>
+			<video src='static/movie.mp4' autoPlay loop muted
+				style={{
+					marginLeft: '50vw',
+					transform: 'translate(-50%)',
+					minHeight: '100%',
+					minWidth: '100%',
+				}}
+			/>
 		</Slide>
 	)
 }
